@@ -31,7 +31,7 @@ function! poslist#save_current_pos()
     let w:poslist_pos = 0
   endif
 
-  let pos = getpos('.')
+  let pos = getcurpos()
   let pos[0] = bufnr('%')
   if (empty(w:poslist) || (pos != w:poslist[w:poslist_pos] &&
         \ ((abs(pos[2] - w:poslist[w:poslist_pos][2]) >= g:poslist_min_save_unit
